@@ -1,0 +1,10 @@
+{
+    "genLimit": 10,
+    "populationSize": 128,
+    "mutationProbability": 0.1,
+    "swapProbability": 0.25,
+    "transferProbability": 0.75,
+    "mutationOp": "mutate",
+    "crossoverOp": "crossover",
+    "selectionOp": "tournamentSelection"
+}
