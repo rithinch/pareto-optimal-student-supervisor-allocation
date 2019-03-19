@@ -1,6 +1,8 @@
 # Student and Supervisor Allocation - Pareto Optimal approach
 
-This project is a Python package for student to supervisor allocation, a variant of the college admission problem. 
+This project is a package for student to supervisor allocation, a variant of the college admission problem. 
+
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
 ## Paper Publication
 
