@@ -1,5 +1,7 @@
 # Student and Supervisor Allocation - Pareto Optimal approach
 
+An AI tool in pure python capable of matching 400+ final year students with 60+ dissertation supervisors using Genetic Algorithm. It can find optimal solutions from a massive 400^60+ size search space in minutes. 
+
 This project is a package for student to supervisor allocation, a variant of the college admission problem. 
 
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
