@@ -23,7 +23,7 @@ from pystsup.data import Supervisor
 from openpyxl.chart import *
 
 
-def getData(stuFile,supFile):
+def getData(stuFile,supFile, keywordsFile="pystsup/test/acm.txt"):
     """
     Function to read input data from excel files and convert it into the required format by GA.
 
@@ -38,7 +38,7 @@ def getData(stuFile,supFile):
         supervisors (dictionary) - dictionary of all supervisors with their details (id,preferences,quota, name, realID)
     """
 
-    topicNames,topicPaths,topicIDs,levels = parseFile("pystsup/test/acm.txt")
+    topicNames,topicPaths,topicIDs,levels = parseFile(keywordsFile)
 
     stuSheet = (xl.load_workbook(stuFile)).active
     supSheet = (xl.load_workbook(supFile)).active

@@ -63,27 +63,31 @@ class Window(Frame):
 
 
         #Creating labels
-
+        self.label_0 = Label(self.master,relief=RIDGE,width=63,text="Select Keywords File (.txt)")
         self.label_1 = Label(self.master,relief=RIDGE,width=63,text="Select Students File")
         self.label_2 = Label(self.master,relief=RIDGE,width=63,text="Select Supervisors File")
         self.label_3 = Label(self.master,relief=RIDGE,width=63,text="Select Where to Save the Results")
-
-        self.label_1.grid(row=0,column=0,pady=10)
-        self.label_2.grid(row=1,column=0,pady=10)
-        self.label_3.grid(row=2,column=0,pady=10)
         
+        self.label_0.grid(row=0, column=0, pady=10)
+        self.label_1.grid(row=1,column=0,pady=10)
+        self.label_2.grid(row=2,column=0,pady=10)
+        self.label_3.grid(row=3,column=0,pady=10)
+        
+        button0 = Button(self.master,text="Browse",width=5,command=self.selectFile0)
         button1 = Button(self.master,text="Browse",width=5,command=self.selectFile1)
         button2 = Button(self.master,text="Browse",width=5,command = self.selectFile2)
         button3 = Button(self.master,text="Save As",width=5,command=self.saveAs)
         button4 = Button(self.master,text="Start Genetic Algorithm",command=self.runGA)
 
-        button1.grid(row=0,column=1,pady=10)
-        button2.grid(row=1,column=1,pady=10)
-        button3.grid(row=2,column=1,pady=10)
-        button4.grid(row=3,padx=20,pady=30)
+        button0.grid(row=0, column=1, pady=10)
+        button1.grid(row=1,column=1,pady=10)
+        button2.grid(row=2,column=1,pady=10)
+        button3.grid(row=3,column=1,pady=10)
+        button4.grid(row=4,padx=20,pady=30)
 
         #Parameters
 
+        self.keywordsFile = None
         self.stuFile = None
         self.supFile = None
         self.outputName = None
@@ -128,10 +132,10 @@ class Window(Frame):
     def runGA(self):
 
         #Getting the Data
-        if self.stuFile != None or self.supFile!=None or self.outputName!=None:
+        if self.stuFile != None or self.supFile!=None or self.outputName!=None or self.keywordsFile!=None:
                   
             print("Getting the input data from excel files..")
-            students,supervisors = getData(self.stuFile,self.supFile)     
+            students,supervisors = getData(self.stuFile,self.supFile, keywordsFile=self.keywordsFile)     
 
             
             non_dominated_solutions,metricData = self.startRUN(students,supervisors)
@@ -146,6 +150,14 @@ class Window(Frame):
         else:
             showerror("Error", "Input files not provided. Please select appropriate student and supervisor data files.")
             
+
+    def selectFile0(self):
+
+        filename = askopenfilename(title="Select Keywords taxonomy file",filetypes=[("Text Files","*.txt")])
+        self.keywordsFile = filename
+        toshow = "Keywords Taxonomy File = "+filename.split("/")[-1]
+        
+        self.label_0['text']=toshow
 
     def selectFile1(self):
 

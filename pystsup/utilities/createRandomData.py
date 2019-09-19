@@ -102,7 +102,7 @@ def createRandomData(m,n,quotaSum,level=3,maxQuota=10,minQuota=4,no_topics=5):
 
 
 
-def createRandomDataExcel(m,n,quotaSum,level=3,maxQuota=10,minQuota=4,no_topics=5):
+def createRandomDataExcel(m,n,quotaSum,level=3,maxQuota=10,minQuota=4,no_topics=5, keywordsFile="pystsup/test/acm.txt"):
     """
     Function to create random students and supervisors data.
 
@@ -122,7 +122,7 @@ def createRandomDataExcel(m,n,quotaSum,level=3,maxQuota=10,minQuota=4,no_topics=
         supervisors (dictionary) - list of tuples that represent each row in the supervisors data file.
     """
 
-    topicNames,topicPaths,topicIDs,levels = parseFile("pystsup/test/acm.txt")
+    topicNames,topicPaths,topicIDs,levels = parseFile(keywordsFile)
 
     numberOfSupervisors = m
     numberOfStudents = n
@@ -136,7 +136,7 @@ def createRandomDataExcel(m,n,quotaSum,level=3,maxQuota=10,minQuota=4,no_topics=
     #Integer partition problem
     quotas = partition(quotaSum,m,minQuota,maxQuota)
 
-    f = open('randomNames.txt','r').read()
+    f = open('random_names.txt','r').read()
     names = f.split("\n")
     
 

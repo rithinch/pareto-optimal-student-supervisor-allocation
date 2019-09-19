@@ -1,7 +1,16 @@
 pystsup/__pycache__
 pystsup/data/__pycache__
+pystsup/evolutionary/__pycache__
 pystsup/evolutionary/crossover/__pycache__
 pystsup/evolutionary/metrics/__pycache__
 pystsup/evolutionary/mutation/__pycache__
 pystsup/evolutionary/selection/__pycache__
 pystsup/utilities/__pycache__
+.vscode
+international_development_keywords.txt
+random_names.txt
+students_sample_international_development.xlsx
+supervisors_sample_international_development.xlsx
+results_sample_international_development.xlsx
+
+
