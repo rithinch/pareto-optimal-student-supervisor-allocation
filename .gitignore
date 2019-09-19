@@ -1,0 +1,7 @@
+pystsup/__pycache__
+pystsup/data/__pycache__
+pystsup/evolutionary/crossover/__pycache__
+pystsup/evolutionary/metrics/__pycache__
+pystsup/evolutionary/mutation/__pycache__
+pystsup/evolutionary/selection/__pycache__
+pystsup/utilities/__pycache__
