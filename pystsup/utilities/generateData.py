@@ -77,8 +77,9 @@ def getData(stuFile,supFile, keywordsFile="pystsup/test/acm.txt"):
         
         for i in range(2,len(row)):
             val = row[i].value
+            val = val.lower().strip()
             if  val != None:
-                keywords.append(row[i].value)
+                keywords.append(val)
             else:
                 keywords.append(topicIDs[1])
                 
@@ -109,8 +110,9 @@ def getData(stuFile,supFile, keywordsFile="pystsup/test/acm.txt"):
         
         for i in range(3,len(row)):
             val = row[i].value
+            val = val.lower().strip()
             if  val != None:
-                keywords.append(row[i].value)
+                keywords.append(val)
             else:
                 keywords.append(topicIDs[1])
                 

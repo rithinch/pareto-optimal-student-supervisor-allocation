@@ -156,7 +156,7 @@ def createRandomDataExcel(m,n,quotaSum,level=3,maxQuota=10,minQuota=4,no_topics=
         
         for i in random.sample(topicsAvailable,no_topics):
             kw = topicIDs[i]
-            toAdd.append(kw)
+            toAdd.append(kw.upper())
 
         supervisors.append(tuple(toAdd))
         
@@ -172,7 +172,7 @@ def createRandomDataExcel(m,n,quotaSum,level=3,maxQuota=10,minQuota=4,no_topics=
         for i in random.sample(topicsAvailable,no_topics):
             kw = topicIDs[i]
             
-            toAdd.append(kw)
+            toAdd.append(kw.upper())
 
         students.append(tuple(toAdd))
 

@@ -67,7 +67,8 @@ def parseFile(filename):
             else:
                 parent = parents[-1]
                 
-
+            name = name.lower().strip()
+            
             topicNames[name] = tid
             topicIDs[tid] = name
             topicPaths[tid] = parent
