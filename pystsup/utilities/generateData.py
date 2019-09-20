@@ -183,7 +183,7 @@ def scanInputData(stuFile, supFile, keywordsFile):
             if val not in topicNames:
                 #print(f"Found Error in Row {i+1} Keyword {j-2} = {val}")
                 errorSup+=1
-                stuSheet[f"{chr(65+j)}{i+2}"].fill = redFill
+                supSheet[f"{chr(65+j)}{i+2}"].fill = redFill
 
     
     print("\nScan Complete..\n==========================")
