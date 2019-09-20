@@ -17,10 +17,15 @@
 
 import openpyxl as xl
 from openpyxl import *
+from openpyxl import Workbook
+from openpyxl.styles import Color, PatternFill, Font, Border
+from openpyxl.styles import colors
+from openpyxl.cell import Cell
+from openpyxl.chart import *
+
 from .acmParser import getPath, parseFile
 from pystsup.data import Student
 from pystsup.data import Supervisor
-from openpyxl.chart import *
 
 
 def getData(stuFile,supFile, keywordsFile="pystsup/test/acm.txt"):
@@ -126,6 +131,72 @@ def getData(stuFile,supFile, keywordsFile="pystsup/test/acm.txt"):
         
 
     return students,supervisors
+
+def scanInputData(stuFile, supFile, keywordsFile):
+
+    topicNames,topicPaths,topicIDs,levels = parseFile(keywordsFile)
+
+    stuWB = xl.load_workbook(stuFile)
+    stuSheet = (stuWB).active
+    
+    supWB = xl.load_workbook(supFile)
+    supSheet = (supWB).active
+
+    stuRows = list(stuSheet.rows)
+    del stuRows[0]
+    supRows = list(supSheet.rows)
+    del supRows[0]
+
+    redFill = PatternFill(start_color='FFFF0000',
+                   end_color='FFFF0000',
+                   fill_type='solid')
+
+    errorStu = 0
+    errorSup = 0
+
+    print("Scanning Student File...")
+    for i in range(len(stuRows)):
+
+        row = stuRows[i]
+
+        for j in range(2,len(row)):
+            val = row[j].value
+            val = val.lower().strip()
+
+            if val not in topicNames:
+                #print(f"Found Error in Row {i+1} Keyword {j-2} = {val}")
+                errorStu+=1
+                stuSheet[f"{chr(65+j)}{i+2}"].fill = redFill
+    
+
+
+    print("\n\nScanning Supervisor Excel File...")
+
+    for i in range(len(supRows)):
+
+        row = supRows[i]
+
+        for j in range(3,len(row)):
+            val = row[j].value
+            val = val.lower().strip()
+
+            if val not in topicNames:
+                #print(f"Found Error in Row {i+1} Keyword {j-2} = {val}")
+                errorSup+=1
+                stuSheet[f"{chr(65+j)}{i+2}"].fill = redFill
+
+    
+    print("\nScan Complete..\n==========================")
+    print(f"Total Errors Found in Student Input File = {errorStu}")
+    print(f"Total Errors Found in Supervisor Input File = {errorSup}")
+
+
+    stuWB.save(stuFile)
+    supWB.save(supFile)
+
+    if (errorStu > 0 or errorSup >0):
+        print("\nErrors marked and saved in provided excel files\n")
+    return errorStu, errorSup
 
 
 def createExcelFile(filename,data,student):
