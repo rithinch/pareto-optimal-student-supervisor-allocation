@@ -151,6 +151,8 @@ def scanInputData(stuFile, supFile, keywordsFile):
                    end_color='FFFF0000',
                    fill_type='solid')
 
+    nofill = PatternFill(fill_type='none')
+
     errorStu = 0
     errorSup = 0
 
@@ -161,12 +163,16 @@ def scanInputData(stuFile, supFile, keywordsFile):
 
         for j in range(2,len(row)):
             val = row[j].value
+            if (val == None):
+                continue
             val = val.lower().strip()
-
             if val not in topicNames:
+
                 #print(f"Found Error in Row {i+1} Keyword {j-2} = {val}")
                 errorStu+=1
                 stuSheet[f"{chr(65+j)}{i+2}"].fill = redFill
+            else:
+                stuSheet[f"{chr(65+j)}{i+2}"].fill = nofill
     
 
 
@@ -178,12 +184,16 @@ def scanInputData(stuFile, supFile, keywordsFile):
 
         for j in range(3,len(row)):
             val = row[j].value
+            if (val == None):
+                continue
             val = val.lower().strip()
 
             if val not in topicNames:
                 #print(f"Found Error in Row {i+1} Keyword {j-2} = {val}")
                 errorSup+=1
                 supSheet[f"{chr(65+j)}{i+2}"].fill = redFill
+            else:
+                supSheet[f"{chr(65+j)}{i+2}"].fill = nofill
 
     
     print("\nScan Complete..\n==========================")
