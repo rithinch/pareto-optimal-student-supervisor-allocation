@@ -22,10 +22,10 @@ Distributed Computing and Artificial Intelligence, 15th International Conference
 The problem of allocating students to supervisors for the development of a personal project or a dissertation is a crucial activity in the higher education environment, as it enables students to get feedback on their work from an expert and improve their personal, academic, and professional abilities. In this project, we propose a multi-objective and near Pareto optimal genetic algorithm for the allocation of students to supervisors. The allocation takes into consideration the students and supervisors' preferences on research/project topics, the lower and upper supervision quotas of supervisors, as well as the workload balance amongst supervisors. We introduce novel mutation and crossover operators for the student-supervisor allocation problem. The experiments carried out show that the components of the genetic algorithm are more apt for the problem than classic components, and that the genetic algorithm is capable of producing allocations that are near Pareto optimal in a reasonable time.
 
 ## Authors
-Rithin Chalumuri (Pinewood Technologies)
-Dr. Victor Sanchez-Anguix (Florida Universitaria, vsanchez@florida-uni.es)
-Dr. Reyhan Aydogan (Ozyegin University, reyhan.aydogan@ozyegin.edu.tr)
-Prof. Vicente Julian (Universitat Politècnica de València, vinglada@dsic.upv.es)
+* Rithin Chalumuri (Pinewood Technologies)
+* Dr. Victor Sanchez-Anguix (Florida Universitaria, vsanchez@florida-uni.es)
+* Dr. Reyhan Aydogan (Ozyegin University, reyhan.aydogan@ozyegin.edu.tr)
+* Prof. Vicente Julian (Universitat Politècnica de València, vinglada@dsic.upv.es)
 
 ## Used by
 * Florida Universitaria (Spain)
