@@ -4,6 +4,8 @@ An AI tool in pure python capable of matching 400+ final year students with 60+ 
 
 This project is a package for student to supervisor allocation, a variant of the college admission problem. 
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=rithinch_pareto-optimal-student-supervisor-allocation&metric=alert_status)](https://sonarcloud.io/dashboard?id=rithinch_pareto-optimal-student-supervisor-allocation)
+
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
 ## Paper Publication
