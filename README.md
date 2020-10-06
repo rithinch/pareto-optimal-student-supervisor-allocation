@@ -26,7 +26,7 @@ The problem of allocating students to supervisors for the development of a perso
 
 ## Authors
 * Rithin Chalumuri (Pinewood Technologies, rithin.chalumuri@gmail.com)
-* Dr. Victor Sanchez-Anguix (Florida Universitaria, vsanchez@florida-uni.es)
+* Dr. Victor Sanchez-Anguix (Universitat Politecnica de Valencia, vicsana1@upv.es)
 * Dr. Reyhan Aydogan (Ozyegin University, reyhan.aydogan@ozyegin.edu.tr)
 * Prof. Vicente Julian (Universitat Politècnica de València, vinglada@dsic.upv.es)
 
