@@ -1,4 +1,4 @@
-Pyomo==5.6.6
+Pyomo==5.7.2
 numpy==1.17.2
 openpyxl==2.6.3
 hopcroftkarp==1.2.4
